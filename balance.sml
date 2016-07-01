@@ -5,16 +5,16 @@
 
 * Creation Date : 02-06-2016
 
-* Last Modified : Thu 02 Jun 2016 09:21:06 PM EEST
+* Last Modified : Fri 01 Jul 2016 02:33:30 PM EEST
 
 * Created By :  Stamatios Anoustis, Artemis Zografou
 
 _._._._._._._._._._._._._._._._._._._._._.*)
 
 
-open IntInf;
+(*open IntInf;*)
 
-	fun dec2tern 0 l = l
+	fun dec2tern 0 l = l		(*split to ternary basis*)
   	| dec2tern W l = 
 		let
 			val remm  = W mod 3
@@ -27,7 +27,7 @@ open IntInf;
 		end
 
 				  
-	fun move_right [] ind lr = lr
+	fun move_right [] ind lr = lr		(*construct the list of elems go to the right of plastigga*)
 	  | move_right l ind lr = 
 		let
 		  val elem = hd l
@@ -39,7 +39,7 @@ open IntInf;
 		    move_right (tl l) cell lr
 		end
 
-	fun move_left [] ind lr = lr
+	fun move_left [] ind lr = lr	(*construct the list of elems go to the left of plastigga*)
 	  | move_left l ind lr = 
 		let
 		  val elem = hd l
@@ -54,8 +54,8 @@ open IntInf;
 	 (*fun comp ((a :IntInf.int), (b :IntInf.int)) =
  		if a >= b then true
  		else false;*)
-val N = 4
-fun balance W  =
+
+fun balance N W  =
   let
 	val l = dec2tern W []
 	val count = length l 
