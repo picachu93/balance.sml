@@ -5,7 +5,7 @@
 
 * Creation Date : 02-06-2016
 
-* Last Modified : Fri 01 Jul 2016 03:21:47 PM EEST
+* Last Modified : Sun 03 Jul 2016 07:34:58 PM EEST
 
 * Created By :  Stamatios Anoustis, Artemis Zografou
 
@@ -62,13 +62,14 @@ local
 	  in
 		fun balance N W  =
 			let
+				
 				val l = dec2tern W []
-				val count = length l 
-				val l1 = rev (move_right (rev l) 0 []);
-				val l2 = rev (move_left (rev l) 0 []);
+				val count =  length l 
+				val l1 = rev (move_right (rev l) 0 [])
+				val l2 = rev (move_left (rev l) 0 [])
 
 			  in
-				if N >= count then 
+				if  N >= fromInt(count) then 
 				  (l2, l1)
 				else
 				  ([], [])
